@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "br.com.heiderlopes.androidfirebasecloudmessage"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.0.0'
+
+    //Firebase Core
+    compile 'com.google.firebase:firebase-core:9.0.2'
+
+    //Firebase Cloud Message
+    compile 'com.google.firebase:firebase-messaging:9.0.2'
+
+
+    //Firebase Real-Time Database
+    compile 'com.google.firebase:firebase-database:9.0.2'
+
+    //Firebase CLoud Hosting
+    compile 'com.google.firebase:firebase-storage:9.0.2'
+
+    //Firebase Crash
+    compile 'com.google.firebase:firebase-crash:9.0.2'
+
+    //Retrofit
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+}
+
+
+
+//Aplicamos o plugin do google play services
+apply plugin: 'com.google.gms.google-services'
